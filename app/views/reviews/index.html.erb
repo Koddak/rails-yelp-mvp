@@ -1,8 +1,10 @@
-<h2>Reviews</h2>
+<p><%=link_to "< Back", restaurant_path(@restaurant), class:"text-secondary text-decoration-none" %></p>
+<h2>Reviews for <%= @restaurant.name %></h2>
 <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class:"text-decoration-none mx-3"%>
 <ul>
 <%@reviews.each do |review|%>
   <li class="card my-4 p-3">
+    <p><strong><%= Faker::Name.first_name %></strong></p>
     <p>Rating: <%= review.rating %>/5<i class="fa-solid fa-star"></i></p>
     <p><%= review.content %></p> </li>
 <%end %>
