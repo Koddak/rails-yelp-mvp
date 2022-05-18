@@ -1,0 +1,8 @@
+<h2>Reviews</h2>
+<ul>
+<%@reviews.each do |review|%>
+  <li class="card my-4">
+    <p>Rating: <%= review.rating %>/5<i class="fa-solid fa-star"></i></p>
+    <p><%= review.content %></p> </li>
+<%end %>
+</ul>

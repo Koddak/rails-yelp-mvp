@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %></h1>
+<h2>Infos</h2>
+<p><strong>Phone number:</strong> <%= @restaurant.phone_number %></p>
+<p><strong>Address:</strong> <%= @restaurant.address %></p>
+<p><strong>Category:</strong> <%= @restaurant.category %></p>
+<h2>Reviews sample</h2>
+<ul>
+<%@restaurant.reviews.first(3).each do |review|%>
+  <li class="card my-4">
+    <p>Rating: <%= review.rating %>/5<i class="fa-solid fa-star"></i></p>
+    <p><%= review.content %></p> </li>
+<%end %>
+</ul>
+<%= link_to "More reviews", restaurant_reviews_path(@restaurant), class:"btn btn-outline-secondary"%>
